@@ -164,26 +164,18 @@ h1 {
   position: relative;
   margin: 2em auto 0 auto;
   height: 22em;
-  width: 30em;
-
+  width: 40em;
+  overflow: hidden;
 }
 
-.sliderul li img {
+.slide img {
   width: 30em;
   height: auto;
 }
 
-#slider ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-#slider ul li {
-  display: inline;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.slide {
+  position: absolute;
+  margin: 0 5em 0 5em;
   display: none;
 }
 
@@ -199,4 +191,7 @@ h1 {
   float: right;
 }
 
+.prev {
+  float: left;
+}
 

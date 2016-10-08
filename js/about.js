@@ -2,38 +2,43 @@ var previous = 4;
 var current = 0;
 var next = 1;
 var num = 5;  // 5 images indexed 0 to 4
-//var width;
 
-var images = $('#slider ul').children();
+var images = $('#slider').children();
 $(images[current]).fadeIn();
-//alert(images[0]);
 
-/*
+
 $('.next').click(function(e) {
-//  width = $('#slider').offsetWidth;
+  $(images[current]).fadeOut("slow");
+  $(images[next]).fadeIn("slow");
 
-  images[current].fadeOut();
-  images[next].fadeIn();
-
-  updateCurr();
+  previous = current;
+  current = next;
+  updateNext();
 });
 
 $('.prev').click(function(e) {
 
-  images[current].fadeOut();
-  images[previous].fadeIn();
+  $(images[current]).fadeOut("slow");
+  $(images[previous]).fadeIn("slow");
 
-  updateCurr();
+  next = current;
+  current = previous;
+  updatePrevious();
 });
 
-function updateCurr() {
-  previous = current;
-  current = next;
-
-  if (current == 5) {
-    next = 1;
+function updateNext() {
+  if (current == 4) {
+    next = 0;
   } else {
-    current = current + 1;
+    next = next + 1;
   }
 }
-*/
+
+function updatePrevious() {
+  if (current == 0) {
+    previous = 4;
+  } else {
+    previous = previous - 1;
+  }
+}
+
