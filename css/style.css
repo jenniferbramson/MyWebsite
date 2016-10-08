@@ -127,17 +127,13 @@ a:hover {
   padding: 0 0 4em;
 }
 
-#cathyDiv > img,
-#pointDiv > img,
-#upperDiv > img,
-#hallowDiv > img,
-#shadyDiv > img {
+.locations img {
   width: 40em;
   padding: 0 0 1em 0;
   image-orientation: from-image;
 }
 
-#cathyDiv > img.vertical {
+#cathyDiv img.vertical {
   display: block;
   width: 25em;
   margin: auto;
@@ -145,11 +141,7 @@ a:hover {
   image-orientation: from-image;
 }
 
-#cathyDiv,
-#pointDiv,
-#upperDiv,
-#hallowDiv,
-#shadyDiv {
+.locations {
   display: block;
   width: 40em;
   margin: auto;
