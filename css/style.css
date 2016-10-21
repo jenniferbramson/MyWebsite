@@ -176,11 +176,14 @@ h1 {
 }
 
 .nav {
-  display: flex;
-  height: 6em;
-  width: 4em;
+  display: block;
   padding: 8em 0 8em 0;
   cursor: pointer;
+}
+
+.nav img {
+  height: 6em;
+  width: 4em; 
 }
 
 .next {
