@@ -8,25 +8,8 @@
   </head>
 
   <body id="events">
-    <header>
-      <nav> <!-- Note: I will change this to a header file when we learn PHP -->
-        <ul>
-          <li>
-            <a href="./about.html">About</a>
-          </li>
-          <li>
-            <a href="./homepage.html">Home</a>
-          </li>
-          <li>
-            <a href="./events.html">Events</a>
-          </li>
-          <li>
-            <a href="./pittsburgh.html">Pittsburgh</a>
-          </li>
-        </ul>
-      </nav> <!-- End nav -->
-    </header>
-
+    <?php include_once "./includes/mynav.php"; ?>
+    
     <form id="eventInput">
       <h3>Enter up to three events to track</h3>
 

@@ -42,10 +42,10 @@ function updatePrevious() {
   }
 }
 
-$('#contactForm').submit(function(e) {
-  e.preventDefault();
+// $('#contactForm').submit(function(e) {
+//   e.preventDefault();
 
-  $('#contactForm').hide();
-  $('#success').show();
-});
+//   $('#contactForm').hide();
+//   $('#success').show();
+// });
 

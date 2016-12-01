@@ -2,30 +2,13 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta content="autor: jenniferbramson">
-    <title>Still Coming Up With A Title</title>
+    <meta content="author: jenniferbramson">
+    <title>1825 Days</title>
     <link rel="stylesheet" href="./css/style.css">
   </head>
 
   <body id="pittsburgh">
-    <header>
-      <nav> <!-- Note: I will change this to a header file when we learn PHP -->
-        <ul>
-          <li>
-            <a href="./about.html">About</a>
-          </li>
-          <li>
-            <a href="./homepage.html">Home</a>
-          </li>
-          <li>
-            <a href="./events.html">Events</a>
-          </li>
-          <li>
-            <a href="./pittsburgh.html">Pittsburgh</a>
-          </li>
-        </ul>
-      </nav> <!-- End nav -->
-    </header>
+    <?php include_once "./includes/mynav.php"; ?>
 
     <div id="pitt">
       <p>Click the map to visit an area</p>
@@ -79,6 +62,8 @@
       <img src="./img/pantherhallow.jpg"/>
       <p class="lastP">Located within Schenley Park, Panther Hallow Creek is a forested trail that runs next to a creek. The neighborhood near it was settled by a good deal of Italian immigrants, so the area tends to be decorated with the Italian colors of red, white, and green. Right outside the entrance, on the edge of the bridge, another panther stands guard. If you don't like panthers, you should probably give up on living in Pittsburgh now.</p>
     </div>
+
+    <?php include_once "./includes/footer.php"; ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="./js/pitt.js"></script>

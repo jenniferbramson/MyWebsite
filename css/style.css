@@ -1,36 +1,78 @@
 html {
   min-height: 20em;
   min-width: 57em;
+  font-family: sans-serif;
+  line-height: 1.4;
 }
 
-#home,
-#pittsburgh {
-  height: 100%;
+body {
   margin: 0;
   padding: 0;
-  background-color: #E6F7FF;
+  background-color: #F6F6F6;
 }
 
-#home > img {
-  width: 80%;
-  display: block;
-  margin: 1em auto 0 auto;
-}
-
-#home > p {
-  width: 80%;
+.border {
+  width: 60em;
+  background-color: white;
   margin: auto;
+  height: 100%;
 }
 
-.firstP {
-  padding: 2em 0 0 0;
+#title {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  height: 18em;
+  color: white;
+  background-color: #2B2B2B;
+  border-bottom: solid #4F4F4F;
+}
+
+footer {
+  margin: 2em 0 0 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  height: 10em;
+  color: white;
+  background-color: #2B2B2B;
+  border-top: solid #4F4F4F;
+  font-family: 'Ubuntu';
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 1.5em 2em 1.5em 2em;
+}
+
+footer li {
+  padding: 0.5em;
+}
+
+span {
+  color: #DE1B1B;
+}
+
+.blue {
+  color: #075ed3;
+}
+
+#title h1 {
+  font-size: 6em;
+  margin: auto;
+  letter-spacing: 4px;
+  font-family: 'Ubuntu';
+}
+
+#title h1::first-letter {
+  color: #DE1B1B;
 }
 
 nav {
   text-align: center;
-  border-bottom: inset black;
+  border-bottom: solid #4F4F4F;
   background-color: white;
-  opacity: 0.8;
 }
 
 nav ul {
@@ -55,69 +97,15 @@ a:hover {
   font-weight: bold;
 }
 
-#events {
-  margin: 0;
-  height: 100%;
-  background-image: url("../img/cathy.jpg");
-  background-color: white;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center center;
+.firstP {
+  padding: 3em 0 0 0;
 }
 
-#error {
-  color: red;
-  padding: 0 2.5em;
-}
-
-#eventInput {
-  padding: 1rem 2rem 2rem 2rem;
-  margin: 17% auto;
-  width: 25rem;
-  background-color: white;
-  border-radius: 0.8rem;
-  opacity: 0.8;
-}
-
-#eventInput h3 {
+#home p,
+#about p,
+#research p {
   text-align: center;
-  margin: 1rem 0 1.2rem 0;
-}
-
-#pitt > img {
-  display: block;
-  padding: 0;
-  position: center;
-  margin: 0 auto;
-}
-
-#pitt > p {
-  text-align: center;
-  margin: 1.5rem 0 0.5rem;
-
-}
-
-#about {
-  padding: 0;
-  margin: 0;
-}
-
-.aboutImg {
-  padding: 1em 1em 1em 1em;
-  display: block;
-  margin: auto;
-  width: 50%;
-  height: auto;
-}
-
-#me {
-  padding: 3em 1em 1em 1em;
-}
-
-#about p {
-  text-align: center;
-  width: 70%;
+  width: 60%;
   margin: auto;
 }
 
@@ -125,35 +113,36 @@ a:hover {
   padding: 0 0 4em;
 }
 
-.locations img,
-#cathDiv img {
-  width: 40em;
-  padding: 0 0 1em 0;
-  image-orientation: from-image;
+/* Home ***************************************************************/
+#camera {
+  width: 10em;
+  float: right;
+  margin: 2em 3% 0 0;
 }
 
-#cathyDiv {
-  margin: 4rem auto 0;
-  display: block;
-  width: 40em;
+/* Triangle code taken from https://css-tricks.com/snippets/css/css-triangle/ */
+#arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 12em solid transparent;
+  border-bottom: 12em solid transparent;
+  border-left: 35em solid transparent; /* to make triangle appear, change the color here */
+  z-index: -100;
+  position: absolute;
+  margin: -3em 0 0 35%;
 }
 
-#cathyDiv img.vertical {
+/* About me ****************************************************************/
+.aboutImg {
+  padding: 2em 1em 2em 1em;
   display: block;
-  width: 25em;
   margin: auto;
-  padding: 0 0 1em 0;
-  image-orientation: from-image;
+  width: 30rem;
+  height: auto;
 }
 
-.locations {
-  display: block;
-  width: 40em;
-  margin: auto;
-}
-
-h1 {
-  text-align: center;
+#me {
+  padding: 3em 1em 2em 1em;
 }
 
 #slider {
@@ -183,7 +172,7 @@ h1 {
 
 .nav img {
   height: 6em;
-  width: 4em; 
+  width: 4em;
 }
 
 .next {
@@ -194,11 +183,59 @@ h1 {
   float: left;
 }
 
+
+/* Pittsburgh ***************************************************************/
+.locations img {
+  width: 40em;
+  padding: 0 0 1em 0;
+  image-orientation: from-image;
+}
+
+.locations p ~ img{
+  padding: 1em 0 1em 0;
+}
+
+#cathyDiv {
+  margin: 4rem auto 0;
+  display: block;
+  width: 40em;
+}
+
+#cathyDiv img.vertical {
+  display: block;
+  width: 25em;
+  margin: auto;
+  padding: 1em 0 1em 0;
+  image-orientation: from-image;
+}
+
+.locations {
+  display: block;
+  width: 40em;
+  margin: auto;
+}
+
+.locations h1 {
+  text-align: center;
+}
+
+#pitt img {
+  display: block;
+  padding: 0;
+  position: center;
+  margin: 0 auto;
+}
+
+#pitt p {
+  text-align: center;
+  margin: 3rem 0 0.5rem;
+}
+
+
+/* Contact Form ****************************************************************/
 #contactForm {
-  padding: 1rem 2rem 2rem 2rem;
-  margin: 2rem auto 4rem auto;
-  width: 50%;
-  border-radius: 0.8rem;
+  margin: 2rem auto 6rem auto;
+  width: 30em;
 }
 
 #contactForm h4 {
@@ -209,10 +246,9 @@ h1 {
   display: block;
   width: 95%;
   height: 1.4rem;
-  margin: 2% auto 2% auto;
-  padding: 0;
-  font-size: 0.8rem;
+  margin: 2% 0 2% 0;
   padding: 0.4rem;
+  font-size: 0.8rem;
   border-color: #DCDCDC;
   border-style: solid;
   border-width: 1px;
@@ -227,8 +263,11 @@ h1 {
 }
 
 #contactHolder {
-  padding: 2% 3% 2% 3%;
-  border-radius: 1rem;
+  padding: 3% 4% 3% 5%;
+  border-radius: 1.2rem;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
 }
 
 #success {
@@ -245,6 +284,78 @@ textarea {
 }
 
 #submitBtn {
-  width: 4rem;
-  margin: 0 1.3rem;
+  width: 4.4rem;
+  height: 1.4rem;
+  background-color: white;
+  border-style: solid;
+  border-width: 0.8px;
+}
+
+#submitBtn:active {
+  background-color: #C6DEFF;
+}
+
+
+/* Research ***************************************************************/
+#dna {
+  display: block;
+  margin: auto;
+  width: 20%;
+}
+
+#research h2 {
+  width: 60%;
+  text-align: center;
+  margin: auto;
+  padding: 0 0 1rem 0;
+}
+
+.regP {
+  padding: 0 0 3rem 0;
+}
+
+
+#left {
+  float: left;
+  margin: 0 1% 0 0;
+}
+
+#center {
+  float: left;
+  margin: 0;
+  margin: 0 2em 0 2em;
+}
+
+#right {
+  float: left;
+  margin: 0 0 0 1%;
+}
+
+.sun div {
+  width: 15em;
+  text-align: center;
+  border-color: black;
+  border-style: solid;
+  border-width: 0.1em;
+  height: 14em;
+  overflow: hidden;
+}
+
+.sun img {
+  width: 100%;
+}
+
+.sun {
+  display: block;
+  width: 51em;
+  height: 15em;
+  margin: 2em auto 2em auto;
+}
+
+#research h4 {
+  margin: 1em auto 0.5em auto;
+}
+
+#home .lastP {
+  margin: 0 auto 3em auto;
 }
