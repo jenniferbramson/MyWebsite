@@ -42,10 +42,47 @@ function updatePrevious() {
   }
 }
 
-// $('#contactForm').submit(function(e) {
-//   e.preventDefault();
+$('#contactForm').submit(function(e) {
+  e.preventDefault();
 
-//   $('#contactForm').hide();
-//   $('#success').show();
-// });
+  // See if all inputs filled
+  var inputs = document.getElementsByClassName('contacters');
+  console.log(inputs);
+  var valid = true;
+
+  for (var i = 0; i < inputs.length; i++) {
+    if (!inputs[i].value) {
+      valid = false;
+    }
+  }
+
+  var valid_length = true;
+  if ((inputs[0].value).length > 30 || (inputs[1].value).length > 30) {
+    valid_length = false;
+  }
+
+  // Submit if filled, otherwise show error
+  if (valid && valid_length) {
+    var values = $(this).serialize();
+
+    var state = $.ajax({
+      url: window.location.origin + '/MyWebsite/handle_submit.php',
+      type: 'POST',
+      data: values,
+      dataType:"json",
+      success: function (result) {
+        console.log("Submitted");
+        console.log(this);
+      }
+    });
+
+    $('#contactForm').hide();
+    $('#success').show();
+  } else if (!valid_length) {
+    $('#error').html("Error: name and email must be smaller than 30 symbols each!");
+  } else {
+    $('#error').html("Error: all fields must be filled out with valid input!");
+  }
+
+});
 

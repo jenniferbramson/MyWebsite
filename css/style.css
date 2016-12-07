@@ -118,6 +118,7 @@ a:hover {
   width: 10em;
   float: right;
   margin: 2em 3% 0 0;
+  z-index: -100;
 }
 
 /* Triangle code taken from https://css-tricks.com/snippets/css/css-triangle/ */
@@ -127,9 +128,9 @@ a:hover {
   border-top: 12em solid transparent;
   border-bottom: 12em solid transparent;
   border-left: 35em solid transparent; /* to make triangle appear, change the color here */
-  z-index: -100;
+  z-index: -50;
   position: absolute;
-  margin: -3em 0 0 35%;
+  margin: -7.5em 0 0 42%;
 }
 
 /* About me ****************************************************************/
@@ -263,8 +264,8 @@ a:hover {
 }
 
 #contactHolder {
-  padding: 3% 4% 3% 5%;
-  border-radius: 1.2rem;
+  padding: 1.5rem 2rem 1.5rem 2rem;
+  border-radius: 1.5rem;
   border-style: solid;
   border-color: black;
   border-width: 2px;
@@ -286,13 +287,18 @@ textarea {
 #submitBtn {
   width: 4.4rem;
   height: 1.4rem;
+  border-width: 0.8px;
+  margin-right: 1rem;
   background-color: white;
   border-style: solid;
-  border-width: 0.8px;
 }
 
 #submitBtn:active {
   background-color: #C6DEFF;
+}
+
+#error {
+  font-size: 0.8rem;
 }
 
 

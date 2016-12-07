@@ -1,56 +1,3 @@
-<?php
-
-  // Large part of this form submission is taken from
-  // http://www.w3schools.com/php/php_form_validation.asp
-
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = test_input($_POST["name"]);
-    $email = test_input($_POST["email"]);
-    $message = test_input($_POST["message"]);
-    $db_name = "my_db";
-
-    // If all filled out:
-    if ($name != "" and $email != "" and $message != "") {
-      $db = new mysqli('localhost', 'root', 'root');
-      if (!$db) {
-        die("Connection to SQL failed.");
-      }
-
-      // Now that connected:
-      $sql = "CREATE DATABASE IF NOT EXISTS my_db";
-      $db->query($sql);
-      if ($db) {
-       echo "Database created successfully <br/>";
-
-       //$sql = "CREATE TABLE MyTable(Name, Email, Message)"
-       //$sql = "INSERT INTO MyTable(Name, Email, Message)
-       //VALUES ($name, $email, $message)";
-
-      //  if ($db->query($sql)) {
-      //    echo "Successfully added Entry <br/>";
-      //  } else {
-      //    echo "Error adding entry <br/>";
-      //  }
-
-      } else {
-       echo "Error creating db <br/>";
-      }
-
-      $db->close();
-    }
-
-  }
-
-  function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-  }
-
-?>
-
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -64,10 +11,10 @@
     <?php include_once "./includes/mynav.php"; ?>
 
     <img id="me" class="aboutImg" src="./img/me.jpg"/>
-    <p>I am a born and raised North Carolinian who realized the world was
-      beautiful one day and picked up a camera to try and capture it. I mean
-      just look at those pictures, do you blame me? Maybe one day I'll have
-      this camera totally figured out and you'll REALLY see what I mean ...and
+    <p>Hi, I'm <span>Jennifer Bramson</span>. I am a born and raised North Carolinian 
+      who realized the world was beautiful one day and picked up a camera to try and 
+      capture it. I mean just look at those pictures, do you blame me? Maybe one day 
+      I'll have this camera totally figured out and you'll REALLY see what I mean ...and
       this web development too.</p>
 
     <div id="slider">
@@ -110,7 +57,7 @@
     <br/>
     <p>For a little over a year now, I've been doing CS at Pitt. I got lost
       inside the cathedral, got on the wrong bus and ended up across the river,
-      broke an elevator, and made some great friends on the way.</p>
+      broke an elevator, and made some great friends along the way.</p>
     <br/>
     <p>There's one more thing you should probably know about me. This is some
       of my family:</p>
@@ -120,7 +67,7 @@
     <br/>
     <p>Thanks for reading this. I hope you enjoy my site!</p>
     <br/>
-    <form id="contactForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <form id="contactForm">
       <p>Want to get in touch? Fill out the form below.</p>
       <br/>
 
@@ -135,10 +82,11 @@
         <span class="special"></span>
 
         <input id="submitBtn" type="submit" value="Submit">
+        <span id="error"></span>
       </fieldset>
     </form>
 
-    <h3 id="success" class="lastP">Success! We will answer you soon!</h3>
+    <h3 id="success" class="lastP">Success! I will answer you soon!</h3>
 
     <?php include_once "./includes/footer.php"; ?>
 
